@@ -1,0 +1,30 @@
+{
+  "name": "adresse",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "rue": {
+      "type": "string",
+      "required": true
+    },
+    "cp": {
+      "type": "number",
+      "required": true
+    },
+    "ville": {
+      "type": "string",
+      "required": true
+    },
+    "pays": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

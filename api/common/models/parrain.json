@@ -1,0 +1,35 @@
+{
+  "name": "parrain",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": false
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "code_parrain": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "date_inscript": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "filleul_join": {
+      "type": "hasMany",
+      "model": "filleul",
+      "foreignKey": "id_parrain"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

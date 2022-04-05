@@ -1,0 +1,30 @@
+{
+  "name": "filleul",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "mail_filleul": {
+      "type": "string",
+      "required": true
+    },
+    "statut": {
+      "type": "string",
+      "required": true
+    },
+    "date_ajout": {
+      "type": "string",
+      "required": true
+    },
+    "id_parrain": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,32 @@
+<input type="checkbox" class="openParrain" id="openParrain">
+<label for="openParrain"><img alt="fleche" class="fleche" for="openParrain" src="../../assets/img/picto/next.png" /></label>
+
+
+<div id="parrainage">
+    <div class="parrainage">
+        <form [formGroup]="parrainForm">
+            <h1>PARRAINAGE</h1>
+            <h2>Faite découvrir la LNDL et <br/>recevez des récompenses !</h2>
+            <mat-form-field>
+                <mat-label>Nom</mat-label>
+                <input matInput type="text" formControlName="nom" name="nom" id="nom" placeholder="" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Prénom</mat-label>
+                <input matInput type="text" formControlName="prenom" name="prenom" id="prenom" placeholder="" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>N° Portable</mat-label>
+                <input matInput type="number" formControlName="tel" name="tel" id="tel" placeholder="" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="mail" name="mail" id="mail" placeholder="" required>
+            </mat-form-field>
+            <button>J'obtiens mon code parrainage</button>
+        </form>
+        <div class="info">
+            <small>*Aucune publicité, ni démarchage.<br/> Vous recevrez uniquement une notification concernant vos récompenses.</small>
+        </div>
+    </div>
+</div>

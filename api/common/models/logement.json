@@ -1,0 +1,40 @@
+{
+  "name": "logement",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "statut_logement": {
+      "type": "string",
+      "required": true
+    },
+    "type_logement": {
+      "type": "string",
+      "required": true
+    },
+    "age_logement": {
+      "type": "string",
+      "required": true
+    },
+    "nb_pers": {
+      "type": "number",
+      "required": true
+    },
+    "id_chauffe": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "test_logement_join": {
+      "type": "hasMany",
+      "model": "testeur",
+      "foreignKey": "id_logement"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "lndl_db": {
+    "host": "localhost",
+    "port": "3308",
+    "database": "lndl",
+    "password": "",
+    "name": "lndl_db",
+    "connector": "mysql",
+    "user": "root"
+  }
+}

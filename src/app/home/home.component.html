@@ -1,0 +1,174 @@
+<app-header [title]="title"></app-header>
+<header>
+    <div id="img_header" class="img_header">
+        <div class="contenu">
+            <div>
+                <h1>La Nationale Du Logement </h1>
+                <h2>Locataire ou propriétaire réduisez vos factures d'énergies en bénéficiant d'une réelle prise en charge sur vos travaux d'isolations, sans limite de surface !</h2>
+                <h2>La Nationale du Logement vous accompagne à chaque étapes, du diagnostic à l’exécution de vos travaux d'isolations.</h2>
+                <button [routerLink]="['/cee']">Chartes de coup de pouce</button>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<!--<app-popup [popup]="popup" [msg]="msg"></app-popup>-->
+<!--
+<div id="popup1" class="overlay" *ngIf="popup == true">
+    <div class="popup">
+
+        <a class="close" (click)="closePopeUp()">&times;</a>
+        <div class="content">
+            <h2>GRATUIT ET IMMÉDIAT !</h2>
+            <p>Vérifiez votre éligibilité en 3 minutes seulement et recevez par mail votre devis gratuit.<br/> Economisez jusqu'à 80% sur vos factures d'énergies, c'est maintenant !</p>
+            <button [routerLink]="['/test']">Je me lance !</button>
+        </div>
+
+    </div>
+</div>
+-->
+
+
+<div class="bloc-home">
+    <h2>QUI SOMMES NOUS ?</h2>
+    <div id="qsn">
+
+        <div class="col" id="col1">
+            <img alt="" src="../../assets/img/carte_france.png" />
+        </div>
+        <div class="col" id="col2">
+            <p>La Nationale Du Logement est une entreprise Française Labellisé Qualibat RGE (Reconnu garant de l’environnement).<br/> Spécialiste de l’isolation, des énergies renouvelables et des toitures en France, nous avons toujours sû nous adapter à
+                l'évolution et aux nouvelles exigences.</p>
+            <p> Implanté à Paris et à Bourges, nos équipes locales s'adressent aux particuliers et aux professionnels désirant faire des rénovations de qualité et respecteuse envers la planète. </p>
+            <p>Notre objectif premier est d'augmenter votre confort au sein de votre maison en toute saison en réduisant vos consommations d'énergies.</p>
+            <br/>
+            <p><strong>Service Client</strong><br/> Des conseillers spécialisés vous accompagnent à chaque étape du diagnostic à l'éxécution de vos travaux</p>
+            <p><strong>Techniniciens Expérimentés</strong><br/> Nous avons nos propres équipes pour garantir des prestations qualitatives</p>
+            <p><strong>Garantie Décennale</strong><br/> Des travaux de qualité assurés pendant 10 ans </p>
+
+        </div>
+
+    </div>
+
+
+    <h2 style="padding:50px 0px">NOS SECTEURS D'ACTIVITÉS</h2>
+    <div class="secteur">
+        <div class="service-box">
+            <div class="service-icon bg-color4">
+                <div class="front-content">
+                    <i class="fa fa-paper-plane-o"></i>
+                    <h3>Les énergies</h3>
+                </div>
+            </div>
+            <div class="service-content">
+                <h3>Les énergies</h3>
+                <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                <button>En savoir plus</button>
+            </div>
+        </div>
+        <div class="service-box">
+            <div class="service-icon bg-color2">
+                <div class="front-content">
+                    <i class="fa fa-anchor"></i>
+                    <h3>Isolation à 1€</h3>
+                </div>
+            </div>
+            <div class="service-content">
+                <h3>Isolation à 1€</h3>
+                <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                <button [routerLink]="['/services']">En savoir plus</button>
+            </div>
+        </div>
+        <div class="service-box">
+            <div class="service-icon bg-color1">
+                <div class="front-content">
+                    <i class="fa fa-trophy"></i>
+                    <h3>Rénovation d'habitat</h3>
+                </div>
+            </div>
+            <div class="service-content">
+                <h3>Rénovation d'habitat</h3>
+                <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                <button>En savoir plus</button>
+            </div>
+        </div>
+
+        <div class="service-box ">
+            <div class="service-icon bg-color3">
+                <div class="front-content">
+                    <i class="fa fa-trophy"></i>
+                    <h3>Rénovation Batiment</h3>
+                </div>
+            </div>
+            <div class="service-content">
+                <h3>Rénovation Batiment</h3>
+                <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure</p>
+                <button>En savoir plus</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="process">
+        <h2 style="padding:50px 0px">COMMENT ÇA MARCHE ?</h2>
+        <div class="contain-step">
+            <div class="step">
+                <div>
+                    <img alt="etape1" src="../../assets/img/offre/serviceclient.png">
+                    <h3>VÉRIFIEZ VOTRE ÉLIGIBILITÉ </h3>
+                    <p>Simulez votre prime sur notre site internet ou appelez directement le <span class="num">01 48 55 16 47</span></p>
+                </div>
+            </div>
+            <div class="step">
+                <div>
+                    <img alt="etape1" src="../../assets/img/offre/assistant.png">
+                    <h3>PRÉ-VISITE GRATUITE </h3>
+                    <p>Recevez un de nos techniciens qui vérifiera la faisabilité des travaux</p>
+                </div>
+            </div>
+            <div class="step">
+                <div>
+                    <img alt="etape1" src="../../assets/img/offre/realisation.png">
+                    <h3>RÉALISATION DE TRAVAUX </h3>
+                    <p>Les techniciens interviennent pour poser votre isolation sur un créneau que vous aurez planifié</p>
+                </div>
+            </div>
+            <div class="step">
+                <div>
+                    <img alt="etape1" src="../../assets/img/offre/1euro.png">
+                    <h3>FACTURE 1€ </h3>
+                    <p>Vous ne régler qu’un euro lors de la visite du service qualité</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="bloc-pictos">
+        <h2 style="padding:50px 0px">NOS CERTIFICATIONS</h2>
+        <div>
+            <img alt="" src="../../assets/img/certificat/rge_qualibat.png" />
+        </div>
+        <div>
+            <img alt="" src="../../assets/img/certificat/rge_qualipac.png" />
+        </div>
+        <div>
+            <img alt="" src="../../assets/img/certificat/garantie_decennale.png" />
+        </div>
+        <div>
+            <img alt="" src="../../assets/img/certificat/mma.png" />
+        </div>
+        <div>
+            <img alt="" src="../../assets/img/certificat/fluide_frigorigene.png" />
+        </div>
+    </div>
+
+</div>

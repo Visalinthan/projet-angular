@@ -1,0 +1,56 @@
+<nav class="menu-principal ">
+    <div id="cadre-menu">
+        <ul class="menu-logo-picto">
+            <li id="logo-lndl">
+                <img alt="logo-lndl" src="assets/img/logo/logo-lndl-menu.png" />
+            </li>
+            <li id="home" routerLinkActive="active">
+                <a routerLink="/home"><img alt="picto-accueil" src="assets/img/picto/picto-home.png" /><span>Accueil</span></a>
+            </li>
+            <li id="cee" routerLinkActive="active">
+                <a routerLink="/cee"><img alt="picto-cee" src="assets/img/picto/picto-cee.png" /><span>CEE</span></a>
+            </li>
+            <li id="services" routerLinkActive="active" *ngIf="change == false">
+                <a routerLink="/services"><img alt="picto-services" src="assets/img/picto/services.png" /><span>Services</span></a>
+            </li>
+            <li id="services" routerLinkActive="active" *ngIf="change == true">
+              <a routerLink="/calorifuge"><img alt="picto-services" src="assets/img/picto/services.png" /><span>Calorifuge</span></a>
+          </li>
+          <li id="services" routerLinkActive="active" *ngIf="change == true">
+            <a routerLink="/plancher"><img alt="picto-services" src="assets/img/picto/services.png" /><span>Plancher Bas</span></a>
+        </li>
+            <li id="test" routerLinkActive="active" *ngIf="change == false">
+                <a routerLink="/test"><img alt="picto-test-eligibilite" src="assets/img/picto/picto-test.png" /><span>Simuler ma prime</span></a>
+            </li>
+            <li id="sav" routerLinkActive="active" *ngIf="change == false">
+                <a routerLink="/sav"><img alt="picto-sav" src="assets/img/picto/sav.png" /><span>SAV</span></a>
+            </li>
+            <li id="parrainage" routerLinkActive="active" *ngIf="change == false">
+                <a routerLink="/parrainage"><img alt="picto-parrainage" src="assets/img/picto/parrainnage.png" /><span>Parrainnage</span></a>
+            </li>
+            <li id="contact" routerLinkActive="active">
+                <a routerLink="/contact"><img alt="picto-contact" src="assets/img/picto/picto-contact.png" /><span>Contact</span></a>
+            </li>
+            <button class="btn-desktop-pro" (click)="btnChange()" [name]="change" [style.backgroundColor]="bgColor"><img src="../../assets/img/picto/login.png"/> {{nomBtn}} </button>
+        </ul>
+    </div>
+</nav>
+
+<button class="btn-mobile-pro"><img src="../../assets/img/picto/login.png"/> Espace Pro </button>
+<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+<label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+<div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+        <li><a routerLink="/home" routerLinkActive="active">Accueil</a></li>
+        <li><a routerLink="/cee" routerLinkActive="active">CEE</a></li>
+        <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
+        <li><a routerLink="/test" routerLinkActive="active">Simuler ma prime</a></li>
+        <li><a routerLink="/sav" routerLinkActive="active">SAV</a></li>
+        <li><a routerLink="/parrainage" routerLinkActive="active">Parrainnage</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </ul>
+</div>

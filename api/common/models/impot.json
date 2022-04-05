@@ -1,0 +1,36 @@
+{
+  "name": "impot",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ref_fiscal": {
+      "type": "string",
+      "required": true
+    },
+    "ref_avis": {
+      "type": "string",
+      "required": true
+    },
+    "revenu": {
+      "type": "number",
+      "required": true
+    },
+    "annee": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "test_impot_join": {
+      "type": "hasMany",
+      "model": "testeur",
+      "foreignKey": "id_impot"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,55 @@
+<form [formGroup]="PersonneFormGroup">
+    <fieldset formGroupName="personne">
+        <mat-radio-group class="radio-group" formControlName="civilite">
+            <mat-radio-button value="M">
+                <span>M</span>
+            </mat-radio-button>
+            <mat-radio-button value="Mme">
+                <span>Mme</span>
+            </mat-radio-button>
+            <mat-radio-button value="Mlle">
+                <span>Mlle</span>
+            </mat-radio-button>
+        </mat-radio-group><br/>
+        <mat-form-field>
+            <mat-label>Nom</mat-label>
+            <input matInput type="text" formControlName="nom" name="nom" id="nom" placeholder="" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Prénom</mat-label>
+            <input matInput type="text" formControlName="prenom" name="prenom" id="prenom" placeholder="" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Téléphone</mat-label>
+            <input matInput type="number" formControlName="tel" name="tel" id="tel" placeholder="" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="mail" name="mail" id="mail" placeholder="" required>
+        </mat-form-field>
+    </fieldset>
+</form>
+
+<form [formGroup]="AdresseFormGroup">
+
+    <fieldset formGroupName="adresse">
+        <mat-form-field>
+            <mat-label>Adresse</mat-label>
+            <input matInput type="text" formControlName="rue" name="rue" id="rue" placeholder="" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Code Postale</mat-label>
+            <input matInput type="Number" formControlName="cp" name="cp" id="cp" placeholder="" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ville</mat-label>
+            <input matInput type="text" formControlName="ville" name="ville" id="ville" placeholder="" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Pays</mat-label>
+            <input matInput type="text" formControlName="pays" name="pays" id="pays" placeholder="" required>
+        </mat-form-field>
+        <br/><button mat-button (click)="addPers()">Valider</button>
+    </fieldset>
+
+</form>

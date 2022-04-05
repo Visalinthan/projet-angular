@@ -1,0 +1,17 @@
+<h2 *ngIf="client.civilite=='M'">Bonjour Monsieur {{client.nom}}</h2>
+<h2 *ngIf="client.civilite=='Mme'">Bonjour Madame {{client.nom}}</h2>
+<h2 *ngIf="client.civilite=='Mlle'">Bonjour {{client.civilite}} {{client.nom}}</h2>
+<h2 *ngIf="parrain">code client: {{client.code_client}}</h2>
+
+<form [formGroup]="AjoutFormGroup">
+    <a (click)="addFilleul()">Ajouter un filleul</a><br>
+    <fieldset class="parrain" formGroupName="AjoutParrain" *ngFor="let control of filleul.controls; index as i">
+        <mat-form-field>
+            <mat-label>Filleul n°</mat-label>
+            <input matInput type="text" formControlName="filleul.controls[i]" name="mail" id="mail" placeholder="Email" />
+        </mat-form-field>
+        <span class="btn-close" (click)="removeFilleul(i)">&times;</span>
+    </fieldset>
+
+    <button mat-button class="btnValid">Valider</button>
+</form>

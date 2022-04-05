@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "client": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "service": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "adresse": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "impot": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "sous_service": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "filleul": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "parrain": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "logement": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "chauffage": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "residence": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "testeur": {
+    "dataSource": "lndl_db",
+    "public": true
+  },
+  "user": {
+    "dataSource": "lndl_db",
+    "public": true
+  }
+}

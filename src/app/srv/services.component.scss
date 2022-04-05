@@ -1,0 +1,114 @@
+.img_header .contenu h1 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+#sous-service,
+.menu-serv {
+    padding-top: 50px;
+    height: 100%;
+}
+
+.menu-serv ul li {
+    cursor: pointer;
+    width: 200px;
+    padding: 20px 10px;
+    font-weight: 300;
+    font-size: 0.9em;
+    font-family: 'Roboto', sans-serif;
+    color: #444;
+}
+
+.menu-serv ul li.active,
+.menu-serv ul li:hover {
+    background-color: #eee;
+    //color: #fff;
+}
+
+.contenu-service,
+.img-service {
+    display: inline;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 450px;
+}
+
+.contenu-service {
+    padding: 0 25px;
+    width: 55%;
+}
+
+.contenu-service h2 {
+    // padding: 25px 0;
+    font-size: 1.3em;
+}
+
+.contenu-service p {
+    font-size: 1em;
+}
+
+.img-service {
+    width: 45%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.img-service img {
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.img-isolation,
+.img-vmc {
+    max-width: 450px;
+}
+
+.img-pompe {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+
+/* Bloc Service Petite Ecran --  Bloc Service Petite Ecran --  Bloc Service Petite Ecran*/
+
+
+/* Bloc Service Petite Ecran --  Bloc Service Petite Ecran --  Bloc Service Petite Ecran*/
+
+@media only screen and (max-width: 1220px) {
+    #sous-service,
+    .menu-serv {
+        padding-top: 15px;
+    }
+    .contenu-service,
+    .img-service {
+        display: block;
+        min-height: 100%;
+    }
+    .contenu-service {
+        width: 100%;
+    }
+    .contenu-service h2 {
+        text-align: center;
+        padding: 15px 0px;
+        font-size: 1em;
+    }
+    .contenu-service p {
+        font-size: 0.9em;
+    }
+    .img-service {
+        width: 100%;
+    }
+    .img-isolation img {
+        max-width: 450px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .menu-serv ul li {
+        width: 100px;
+        font-size: 0.8em;
+        text-align: center;
+    }
+}

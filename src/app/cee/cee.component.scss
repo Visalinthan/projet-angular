@@ -1,0 +1,137 @@
+.img_header .contenu h1 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.container {
+    text-align: center;
+}
+
+.bloc {
+    max-width: 100%;
+    text-align: center;
+}
+
+.col {
+    max-width: 500px;
+    display: inline;
+    display: inline-block;
+    padding: 30px;
+    vertical-align: top;
+}
+
+.col h2 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.col p {
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+.col ul {
+    text-align: left;
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+.col ul li {
+    font-size: 1em;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    padding: 5px 0;
+}
+
+.bloc2 {
+    max-width: 1500px;
+    width: 100%;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.onglets {
+    display: inline;
+    display: inline-block;
+    width: 100%;
+}
+
+.onglet {
+    width: 50%;
+    padding: 20px 30px;
+    cursor: pointer;
+    border: 1px solid #326952e6;
+}
+
+.bloc2 .onglet.active {
+    background-color: #326952e6;
+}
+
+.bloc2 .onglet h1 {
+    font-size: 1.4em;
+}
+
+.bloc2 .onglet.active h1 {
+    color: #eee;
+}
+
+.bloc2 .contenu {
+    clear: both;
+    max-width: 100%;
+    border: 1px solid #326952e6;
+    border-top: none;
+}
+
+.bloc2 .contenu div {
+    padding: 50px 100px;
+}
+
+.bloc2 .contenu h1 {
+    font-size: 1.4em;
+    padding: 35px 0;
+    text-align: left;
+}
+
+.bloc2 .contenu h2 {
+    text-align: left;
+    font-size: 1.2em;
+    padding: 20px 0;
+}
+
+.bloc2 .contenu p {
+    font-size: 1.1em;
+    padding: 5px 0;
+}
+
+div.container div {
+    display: inline;
+    display: inline-block;
+    vertical-align: top;
+    max-height: 100%;
+}
+
+
+/*
+    .contenu div:nth-child(even) {
+        background-color: #326952e6;
+    }
+    
+    .contenu div:nth-child(even) h1,
+    .contenu div:nth-child(even) h2,
+    .contenu div:nth-child(even) p {
+        color: #eee;
+    }
+    
+    .contenu div:nth-child(odd) {
+        background: #FFF
+    }*/
+
+@media only screen and (max-width: 1300px) {
+    .bloc2 {
+        margin: 10px auto;
+    }
+    .bloc2 .contenu div {
+        padding: 20px;
+    }
+}

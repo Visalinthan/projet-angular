@@ -1,0 +1,315 @@
+<app-header [title]=title></app-header>
+<app-popup [popup]=popup [msg]=msg #Popup></app-popup>
+
+<header>
+    <div id="img_header" class="img_header">
+        <div class="contenu">
+            <div>
+                <h1>Simulez ma prime </h1>
+                <h2>Vérifiez vous même votre éligibilité en 3 en minutes ou demander à être rappeler par un conseiller sur un créneau horaire de votre choix</h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container" id="eligibilite">
+
+    <mat-horizontal-stepper linear #stepper>
+
+        <mat-step [stepControl]="SituationFormGroup">
+            <form [formGroup]="SituationFormGroup">
+                <ng-template matStepLabel class="mat-label">Situation</ng-template>
+                <fieldset formGroupName="personne">
+
+                    <h2>Mes informations personnelles</h2>
+                    <br/>
+                    <mat-radio-group class="radio-group" formControlName="civilite">
+                        <mat-radio-button value="M">
+                            <span>M</span>
+                        </mat-radio-button>
+                        <mat-radio-button value="Mme">
+                            <span>Mme</span>
+                        </mat-radio-button>
+                        <mat-radio-button value="Mlle">
+                            <span>Mlle</span>
+                        </mat-radio-button>
+                    </mat-radio-group><br/>
+                    <mat-form-field>
+                        <mat-label>Nom</mat-label>
+                        <input matInput type="text" formControlName="nom" name="nom" id="nom" placeholder="" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Prénom</mat-label>
+                        <input matInput type="text" formControlName="prenom" name="prenom" id="prenom" placeholder="" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Téléphone</mat-label>
+                        <input matInput type="number" formControlName="tel" name="tel" id="tel" placeholder="" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput type="text" formControlName="mail" name="mail" id="mail" placeholder="" required>
+                    </mat-form-field>
+                </fieldset>
+
+                <h2>Ma déclaration {{date-1}}</h2>
+
+                <fieldset formGroupName="impot">
+                    <mat-form-field>
+                        <mat-label>Numéro Fiscale</mat-label>
+                        <input matInput type="Number" formControlName="ref_fiscal" name="ref_fiscal" id="ref_fiscal" placeholder="Déclarant 1 " required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Références de l'avis</mat-label>
+                        <input matInput type="Number" formControlName="ref_avis" name="ref_avis" id="ref_avis" placeholder="Numéro de l'avis" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Revenu d'imposition</mat-label>
+                        <input matInput type="Number" formControlName="revenu" name="revenu" id="revenu" placeholder="Numéro de l'avis" required>
+                    </mat-form-field>
+                </fieldset>
+
+
+                <div>
+                    <button mat-button matStepperNext>Suivant</button>
+                </div>
+            </form>
+        </mat-step>
+
+
+        <mat-step [stepControl]="CoordonneesFormGroup">
+            <form [formGroup]="CoordonneesFormGroup">
+                <ng-template matStepLabel>Coordonnées</ng-template>
+
+                <fieldset formGroupName="adresse">
+                    <mat-form-field>
+                        <mat-label>Adresse</mat-label>
+                        <input matInput type="text" formControlName="rue" name="rue" id="rue" placeholder="" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Code Postale</mat-label>
+                        <input matInput type="Number" formControlName="cp" name="cp" id="cp" placeholder="" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Ville</mat-label>
+                        <input matInput type="text" formControlName="ville" name="ville" id="ville" placeholder="" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Pays</mat-label>
+                        <input matInput type="text" formControlName="pays" name="pays" id="pays" placeholder="" required>
+                    </mat-form-field>
+                </fieldset>
+
+                <div>
+                    <button mat-button matStepperPrevious>Précédent</button>
+                    <button mat-button matStepperNext>Suivant</button>
+                </div>
+            </form>
+
+        </mat-step>
+
+        <mat-step [stepControl]="LogementFormGroup">
+            <form [formGroup]="LogementFormGroup">
+                <ng-template matStepLabel>Logement</ng-template>
+                <div formGroupName="logement">
+                    <h2>Mon logement </h2>
+                    <mat-form-field>
+                        <mat-label>Votre statut </mat-label>
+                        <mat-select formControlName="statut_logement">
+                            <mat-option value="Propriétaire">Propriétaire</mat-option>
+                            <mat-option value="Locataire">Locataire</mat-option>
+                        </mat-select>
+                    </mat-form-field><br/>
+
+                    <mat-form-field>
+                        <mat-label>Type de logement</mat-label>
+                        <mat-select formControlName="type_logement">
+                            <mat-option value="Maison">Maison</mat-option>
+                            <mat-option value="Appartement">Appartement</mat-option>
+                        </mat-select>
+                    </mat-form-field><br/>
+
+                    <mat-form-field>
+                        <mat-label>Selectionnez l'age du logement</mat-label>
+                        <mat-select formControlName="age_logement">
+                            <mat-option *ngFor="let ageLogement of ageLogements" [value]="ageLogement">{{ageLogement}}</mat-option>
+                        </mat-select>
+                    </mat-form-field><br/>
+
+                    <mat-form-field>
+                        <mat-label>Composition du foyer</mat-label>
+                        <input matInput type="Number" formControlName="nb_pers" name="nbpersonne" id="nbpersonne" placeholder="Nombre de personne dans votre foyer" required>
+                    </mat-form-field>
+                </div>
+
+                <div formGroupName="chauffage">
+                    <h2>Mon mode de chauffe</h2>
+
+                    <mat-form-field>
+                        <mat-label>Votre statut </mat-label>
+                        <mat-select formControlName="type_chauffe">
+                            <mat-option value="Individuel">Individuel</mat-option>
+                            <mat-option value="Collective">Collective</mat-option>
+                        </mat-select>
+                    </mat-form-field><br/>
+                    <mat-form-field>
+                        <mat-label>Sélectionnez la ou les énergies de chauffage de votre foyer</mat-label>
+                        <mat-select formControlName="mode_chauffe" multiple>
+                            <mat-option (click)="isOtherChauffe($event)" *ngFor="let modeChauffe of modeChauffeList " [value]="modeChauffe ">{{modeChauffe}}</mat-option>
+                        </mat-select>
+                    </mat-form-field><br/>
+                    <mat-form-field *ngIf="LogementFormGroup.get('chauffage').get('mode_chauffe').value.includes( 'Autre') ">
+                        <mat-label>Type de Chauffage</mat-label>
+                        <input (change)="setOther($event)" matInput formControlName="autre_chauffe" placeholder="">
+                    </mat-form-field>
+                </div>
+
+                <div class="iso" formGroupName="isolation">
+                    <div class="check-box-iso">
+                        <h2>Je souhaite isoler</h2>
+                        <div>
+                            <mat-checkbox formControlName="mur"><span>Mes murs</span></mat-checkbox>
+                            <mat-checkbox formControlName="comble"><span>Mes combles</span> </mat-checkbox>
+                            <mat-checkbox formControlName="sous_sol" (change)="isSousSol($event)"><span>Mon sous-sol </span></mat-checkbox>
+                            <mat-checkbox formControlName="cave" (change)="isCave($event)"><span>Ma cave </span> </mat-checkbox>
+                            <mat-checkbox formControlName="garage" (change)="isGarage($event)"><span>Mon garage</span></mat-checkbox>
+                            <mat-checkbox formControlName="vide_sanitaire" (change)="isVide_sanitaire($event)"><span>Mon vide sanitaire</span></mat-checkbox>
+                        </div>
+                        <div class="checked">
+                            <div class="mur" *ngIf="LogementFormGroup.value.isolation.mur">
+                                <mat-label>Mur :</mat-label>
+                                <mat-checkbox formControlName="mur_int" (change)="isnbMurInt($event)"><span>Intérieur</span></mat-checkbox>
+                                <mat-checkbox formControlName="mur_ext" (change)="isnbMurExt($event)"><span>Extérieur</span></mat-checkbox>
+                                <br/>
+                                <mat-form-field *ngIf="LogementFormGroup.value.isolation.mur_int">
+                                    <mat-label>Nombre de mur intérieur à isoler</mat-label>
+                                    <mat-select formControlName="nbMur_int">
+                                        <mat-option *ngFor="let nbMur of nbMurs" [value]="nbMur">{{nbMur}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <mat-form-field *ngIf="LogementFormGroup.value.isolation.mur_ext">
+                                    <mat-label>Nombre de mur extérieur à isoler</mat-label>
+                                    <mat-select formControlName="nbMur_ext">
+                                        <mat-option *ngFor="let nbMur of nbMurs" [value]="nbMur">{{nbMur}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field><br/>
+                                <mat-form-field *ngIf="LogementFormGroup.value.isolation.mur_int || LogementFormGroup.value.isolation.mur_ext">
+                                    <mat-label>Surface total des murs</mat-label>
+                                    <input formControlName="surfaceMur" matInput placeholder="en m2">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="comble " *ngIf="LogementFormGroup.value.isolation.comble">
+                                <mat-label>Comble :</mat-label>
+                                <mat-checkbox formControlName="comble_perdu" (change)="isCombleP($event)"><span>Perdu</span></mat-checkbox>
+                                <mat-checkbox formControlName="comble_amenage" (change)="isCombleA($event)"><span>Aménagé</span></mat-checkbox><br/>
+                                <mat-form-field *ngIf="LogementFormGroup.value.isolation.comble_perdu">
+                                    <mat-label>Surface du comble perdu</mat-label>
+                                    <input matInput formControlName="surfaceCombleP" placeholder="en m2">
+                                </mat-form-field>
+                                <mat-form-field *ngIf="LogementFormGroup.value.isolation.comble_amenage">
+                                    <mat-label>Surface du comble aménagé</mat-label>
+                                    <input matInput formControlName="surfaceCombleA" placeholder="en m2">
+                                </mat-form-field>
+                            </div>
+                            <div class="sous_sol " *ngIf="LogementFormGroup.value.isolation.sous_sol">
+                                <mat-form-field>
+                                    <mat-label>Surface du sous sol</mat-label>
+                                    <input matInput formControlName="surfaceSousSol" placeholder="en m2">
+                                </mat-form-field>
+                            </div>
+                            <div class="cave " *ngIf="LogementFormGroup.value.isolation.cave">
+                                <mat-form-field>
+                                    <mat-label>Surface de la cave</mat-label>
+                                    <input matInput formControlName="surfaceCave" placeholder="en m2">
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="garage " *ngIf="LogementFormGroup.value.isolation.garage">
+                                <mat-form-field>
+                                    <mat-label>Surface du garage</mat-label>
+                                    <input matInput formControlName="surfaceGarage" placeholder="en m2">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="vide_sanitaire " *ngIf="LogementFormGroup.value.isolation.vide_sanitaire">
+                                <mat-form-field>
+                                    <mat-label>Surface du vide sanitaire</mat-label>
+                                    <input matInput formControlName="surfaceVideSanitaire" placeholder="en m2">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <button mat-button matStepperPrevious>Precédent</button>
+                    <button mat-button matStepperNext>Suivant</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="RecapFormGroup ">
+            <form [formGroup]="RecapFormGroup ">
+                <ng-template matStepLabel>Récapitulatif</ng-template>
+                <div class="recap">
+                    <h2>Mes informations personnelles</h2>
+                    <p>{{SituationFormGroup.get('personne').get('civilite').value}} {{SituationFormGroup.get('personne').get('nom').value}} {{SituationFormGroup.get('personne').get('prenom').value}}</p>
+                    <p>{{CoordonneesFormGroup.get('adresse').get('rue').value}} {{CoordonneesFormGroup.get('adresse').get('cp').value}} {{CoordonneesFormGroup.get('adresse').get('ville').value}} {{CoordonneesFormGroup.get('adresse').get('pays').value}}</p>
+                    <p>{{SituationFormGroup.get('personne').get('tel').value}}</p>
+                    <p>{{SituationFormGroup.get('personne').get('mail').value}}</p>
+
+
+                    <h2>Ma déclaration d'impôt</h2>
+                    <p>Numéro Fiscale : {{SituationFormGroup.get('impot').get('ref_fiscal').value}}</p>
+                    <p>Références de l'avis : {{SituationFormGroup.get('impot').get('ref_avis').value}}</p>
+
+                    <h2>Mon Logement</h2>
+
+                    <p>Je suis <b>{{LogementFormGroup.get('logement').get('statut_logement').value}}</b> d'un(e) <b>{{LogementFormGroup.get('logement').get('type_logement').value}}</b> qui a <b>{{LogementFormGroup.get('logement').get('age_logement').value}} </b>                        dont <b>{{LogementFormGroup.get('logement').get('nb_pers').value}} personne(s) au foyer</b>
+                    </p>
+                    <p>
+                        Je suis chauffé <b> {{LogementFormGroup.get('chauffage').get('mode_chauffe').value}} </b>
+                        <b *ngIf="LogementFormGroup.get('chauffage').get('mode_chauffe').value.includes( 'Autre')"> : {{LogementFormGroup.get('chauffage').get('autre_chauffe').value}}</b>
+                    </p>
+
+                    <p *ngIf="LogementFormGroup.get('isolation').get('mur').value">
+                        Je souhaite isoler <b *ngIf="LogementFormGroup.get('isolation').get('mur_int').value"> {{LogementFormGroup.get('isolation').get('nbMur_int').value }} mur(s) intérieur(s)</b>,
+                        <b *ngIf="LogementFormGroup.get('isolation').get('mur_ext').value"> {{LogementFormGroup.get('isolation').get('nbMur_ext').value }} mur(s) extérieur(s)</b> dont la surface total est de <b>{{LogementFormGroup.get('isolation').get('surfaceMur').value }} m2</b>
+                    </p>
+
+                    <p *ngIf="LogementFormGroup.get('isolation').get('comble').value">
+                        Je souhaite isoler <b *ngIf="LogementFormGroup.get('isolation').get('comble_perdu').value">mon comble aménagée</b>, dont la surface total est de <b>{{LogementFormGroup.get('isolation').get('surfaceCombleA').value }} m2</b>,
+                        <b *ngIf="LogementFormGroup.get('isolation').get('comble_amenage').value"> mon comble perdu</b>, dont la surface total est de <b>{{LogementFormGroup.get('isolation').get('surfaceCombleP').value }} m2</b>
+                    </p>
+
+                    <p *ngIf="LogementFormGroup.get('isolation').get('sous_sol').value">
+                        Je souhaite isoler mon sous-sol, dont la surface total est de <b>{{LogementFormGroup.get('isolation').get('surfaceSousSol').value }} m2</b>
+                    </p>
+
+                    <p *ngIf="LogementFormGroup.get('isolation').get('cave').value">
+                        Je souhaite isoler ma cave, dont la surface total est de <b>{{LogementFormGroup.get('isolation').get('surfaceCave').value }} m2</b>
+                    </p>
+
+                    <p *ngIf="LogementFormGroup.get('isolation').get('garage').value">
+                        Je souhaite isoler mon garage, dont la surface total est de <b>{{LogementFormGroup.get('isolation').get('surfaceSousSol').value }} m2</b>
+                    </p>
+
+                    <p *ngIf="LogementFormGroup.get('isolation').get('vide_sanitaire').value">
+                        Je souhaite isoler mon vide sanitaire, dont la surface total est de <b>{{LogementFormGroup.get('isolation').get('surfaceVideSanitaire').value }} m2</b>
+                    </p>
+
+                </div>
+
+                <div>
+                    <button mat-button matStepperPrevious>Modifier</button>
+                    <button mat-button (click)="Tester()">Valider</button>
+                </div>
+
+            </form>
+        </mat-step>
+
+    </mat-horizontal-stepper>
+</div>

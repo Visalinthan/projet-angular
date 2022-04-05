@@ -1,0 +1,26 @@
+{
+  "name": "residence",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_personne": {
+      "type": "number",
+      "required": true
+    },
+    "id_adresse": {
+      "type": "number",
+      "required": true
+    },
+    "type_residence": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

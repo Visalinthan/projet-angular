@@ -1,0 +1,74 @@
+<app-header [title]=title></app-header>
+<app-popup [popup]=popup [msg]=msg #Popup></app-popup>
+
+<header>
+
+    <div id="img_header" class="img_header">
+        <div class="titre">
+            <h1>S.A.V</h1>
+            <h3>SERVICE</h3>
+            <h2>APRÈS VENTE</h2>
+
+        </div>
+    </div>
+
+</header>
+<div id="sav" class="container largeur-max">
+    <div class="bloc">
+        <div class="col" id="col1">
+
+        </div>
+        <div class="form">
+            <form [formGroup]="savForm" (ngSubmit)="onSubmit()">
+                <p>Je suis déjà client chez la LNDL ?</p>
+                <mat-radio-group class="radio-group" formControlName="quest" (change)="isRequired($event)">
+                    <mat-radio-button value="oui">
+                        <span>Oui</span>
+                    </mat-radio-button>
+                    <mat-radio-button value="non">
+                        <span>Non</span>
+                    </mat-radio-button>
+                </mat-radio-group>
+                <div formGroupName="client" *ngIf="savForm.value.quest == 'oui' ">
+                    <input type="text" formControlName="codeclient" name="codeclient " placeholder="Code Client * ">
+                    <!--<div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>Erreur !</strong> Le code client saisie n'existe pas.
+                    </div>-->
+                </div>
+                <div formGroupName="particulier" *ngIf="savForm.value.quest == 'non' ">
+                    <mat-radio-group class="radio-group" formControlName="civilite">
+                        <mat-radio-button value="M">
+                            <span>M</span>
+                        </mat-radio-button>
+                        <mat-radio-button value="Mme">
+                            <span>Mme</span>
+                        </mat-radio-button>
+                        <mat-radio-button value="Mlle">
+                            <span>Mlle</span>
+                        </mat-radio-button>
+                    </mat-radio-group><br/>
+                    <input type="text" formControlName="nom" name="nom" placeholder="Votre Nom * ">
+                    <input type="text" formControlName="prenom" name="prenom" placeholder="Votre Prenom * ">
+                    <input type="text" formControlName="mail" name="mail" placeholder="Votre Email * ">
+                    <input type="number" formControlName="tel" name="te" placeholder="Votre Numéro Tél * ">
+                </div>
+                <!-- <div class="custom-select">-->
+                <select name="objet" formControlName="objet">
+                        <option value="" selected disabled hidden>Objet</option>
+                        <option value="1">Suivi de mon dossier</option>
+                        <option value="2">Signaler un retard ou une abscence</option>
+                        <option value="3">Problème sur le chantier</option>
+                        <option value="4">Autre</option>
+                    </select>
+                <!--</div>-->
+
+                <textarea type="text" formControlName="msg" name="msg" placeholder="Votre Message * "></textarea>
+
+
+                <input type="submit" value="Envoyer" />
+            </form>
+        </div>
+
+    </div>
+</div>

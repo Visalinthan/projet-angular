@@ -1,0 +1,59 @@
+{
+  "name": "client",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "civilite": {
+      "type": "string",
+      "required": true
+    },
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "prenom": {
+      "type": "string",
+      "required": true
+    },
+    "tel": {
+      "type": "string",
+      "required": true
+    },
+    "mail": {
+      "type": "string",
+      "required": true
+    },
+    "code_client": {
+      "type": "string",
+      "required": "true",
+      "index": {
+        "unique": true
+      }
+    },
+    "id_user": {
+      "type": "string",
+      "required": "true",
+      "index": {
+        "unique": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "parrain_join": {
+      "type": "hasMany",
+      "model": "parrain",
+      "foreignKey": "id"
+    },
+    "adresse_join": {
+      "type": "hasAndBelongsToMany",
+      "model": "adresse",
+      "throughTable": "residence"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

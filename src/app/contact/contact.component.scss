@@ -1,0 +1,155 @@
+.img_header .contenu h1 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.container {
+    text-align: center;
+}
+
+#contact {
+    width: 100%;
+    display: block;
+    display: inline-block;
+}
+
+#contact div {
+    display: block;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-style-5 {
+    padding: 10px 20px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-right: 50px;
+}
+
+.form-style-5 fieldset {
+    border: none;
+    max-width: 500px;
+    display: inline;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-style-5 legend {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.form-style-5 label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-style-5 input[type="text"],
+.form-style-5 input[type="date"],
+.form-style-5 input[type="datetime"],
+.form-style-5 input[type="email"],
+.form-style-5 input[type="number"],
+.form-style-5 input[type="search"],
+.form-style-5 input[type="time"],
+.form-style-5 input[type="url"],
+.form-style-5 textarea,
+.form-style-5 select {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.form-style-5 select {
+    -webkit-appearance: menulist-button;
+    height: 35px;
+}
+
+.form-style-5 .number {
+    background: #4b9c4f;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-5 input[type="submit"],
+.form-style-5 input[type="button"] {
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #4b9c4f;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    font-style: normal;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid #4b9c4f;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.form-style-5 input[type="submit"]:hover,
+.form-style-5 input[type="button"]:hover {
+    background: #3f7942;
+}
+
+form fieldset input.ng-valid.ng-touched {
+    border: 1px solid #4b9c4f;
+}
+
+form fieldset input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+
+/*Map Contact - Map Contact*/
+
+
+/*Map Contact - Map Contact*/
+
+.map {
+    width: 700px;
+}
+
+.map h3,
+.map p {
+    margin: 15px 0 15px 0;
+    text-align: center;
+}
+
+.map p {
+    margin-bottom: 50px;
+}
+
+.map iframe {
+    border: none;
+    left: 0;
+    top: 0;
+    height: 500px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1300px) {
+    .form-style-5 {
+        margin-right: 0px;
+    }
+    .map {
+        width: 100%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "testeur",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date_test": {
+      "type": "string",
+      "required": true
+    },
+    "resultat": {
+      "type": "boolean",
+      "required": true
+    },
+    "id_impot": {
+      "type": "number",
+      "required": true
+    },
+    "id_logement": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

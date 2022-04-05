@@ -1,0 +1,101 @@
+<app-header [title]=title></app-header>
+<!--<app-diapo1></app-diapo1>-->
+<header>
+    <div id="img_header" class="img_header">
+        <div class="contenu">
+            <h1>Nos Services </h1>
+        </div>
+    </div>
+</header>
+<div id="services" class="container serv largeur-max">
+
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Isolation">
+
+            <mat-drawer-container autosize>
+                <mat-drawer #drawer mode="side" opened="true">
+                    <nav class="menu-serv">
+                        <ul *ngFor="let sous_service of sous_services" (selectedIso)="selectIso(sous_service)">
+                            <li *ngIf="sous_service.id_service == 1" (click)="selectIso(sous_service)" [ngClass]="{'active': selectedIso == sous_service}">
+                                {{sous_service.titre}}
+                            </li>
+                        </ul>
+                    </nav>
+                </mat-drawer>
+
+
+                <div class="contenu-service" *ngIf="selectedIso.id_service == 1" id="sous-service">
+
+                    <h2 *ngIf="selectedIso.sous_titre">{{selectedIso.sous_titre}}</h2>
+                    <p [innerHTML]="selectedIso.description | replaceLineBreaks">{{selectedIso.description}}</p>
+                    <h2 *ngIf="selectedIso.sous_titre_2">{{selectedIso.sous_titre_2}}</h2>
+                    <p *ngIf="selectedIso.description_2" [innerHTML]="selectedIso.description_2 | replaceLineBreaks">{{selectedIso.description_2}}</p>
+                    <h2 *ngIf="selectedIso.sous_titre_3">{{selectedIso.sous_titre_3}}</h2>
+                    <p *ngIf="selectedIso.description_3" [innerHTML]="selectedIso.description_3 | replaceLineBreaks">{{selectedIso.description_3}}</p>
+                </div>
+                <div class="img-service" id="sous-service">
+                    <img class="img-isolation" alt="" src="{{selectedIso.img}}" />
+                </div>
+
+            </mat-drawer-container>
+
+        </mat-tab>
+        <mat-tab label="Pompe à Chaleur">
+            <mat-drawer-container autosize>
+                <mat-drawer #drawer mode="side" opened="true">
+                    <nav class="menu-serv">
+                        <ul *ngFor="let sous_service of sous_services" (selectedPompe)="selectPompe(sous_service)">
+                            <li *ngIf="sous_service.id_service == 2" (click)="selectPompe(sous_service)" [ngClass]="{'active': selectPompe == sous_service}">
+                                {{sous_service.titre}}
+                            </li>
+                        </ul>
+                    </nav>
+
+                </mat-drawer>
+
+                <div class="contenu-service" *ngIf="selectedPompe.id_service == 2" id="sous-service">
+                    <h2 *ngIf="selectedPompe.sous_titre">{{selectedPompe.sous_titre}}</h2>
+                    <p [innerHTML]="selectedPompe.description | replaceLineBreaks">{{selectedPompe.description}}</p>
+                    <h2 *ngIf="selectedPompe.sous_titre_2">{{selectedPompe.sous_titre_2}}</h2>
+                    <p *ngIf="selectedPompe.description_2" [innerHTML]="selectedPompe.description_2 | replaceLineBreaks">{{selectedPompe.description_2}}</p>
+                    <h2 *ngIf="selectedPompe.sous_titre_3">{{selectedPompe.sous_titre_3}}</h2>
+                    <p *ngIf="selectedPompe.description_3" [innerHTML]="selectedPompe.description_3 | replaceLineBreaks">{{selectedPompe.description_3}}</p>
+
+                </div>
+                <div class="img-service " id="sous-service">
+                    <img class="img-pompe" alt="" src="{{selectedPompe.img}}" />
+                </div>
+
+            </mat-drawer-container>
+
+        </mat-tab>
+        <mat-tab label="VMC">
+            <mat-drawer-container autosize>
+                <mat-drawer #drawer mode="side" opened="true">
+                    <nav class="menu-serv">
+                        <ul *ngFor="let sous_service of sous_services" (selectedVmc)="selectVmc(sous_service)">
+                            <li *ngIf="sous_service.id_service == 4" (click)="selectVmc(sous_service)" [ngClass]="{'active': selectedVmc == sous_service}">
+                                {{sous_service.titre}}
+                            </li>
+                        </ul>
+                    </nav>
+                </mat-drawer>
+
+                <div class="contenu-service" *ngIf="selectedVmc.id_service == 4" id="sous-service">
+                    <h2 *ngIf="selectedVmc.sous_titre">{{selectedVmc.sous_titre}}</h2>
+                    <p [innerHTML]="selectedVmc.description | replaceLineBreaks">{{selectedVmc.description}}</p>
+                    <h2 *ngIf="selectedVmc.sous_titre_2">{{selectedVmc.sous_titre_2}}</h2>
+                    <p *ngIf="selectedVmc.description_2" [innerHTML]="selectedVmc.description_2 | replaceLineBreaks">{{selectedVmc.description_2}}</p>
+                    <h2 *ngIf="selectedVmc.sous_titre_3">{{selectedVmc.sous_titre_3}}</h2>
+                    <p *ngIf="selectedVmc.description_3" [innerHTML]="selectedVmc.description_3 | replaceLineBreaks">{{selectedVmc.description_3}}</p>
+                </div>
+                <div class="img-service" id="sous-service">
+                    <img alt="" class="img-vmc" src="{{selectedVmc.img}}" />
+                </div>
+
+            </mat-drawer-container>
+
+        </mat-tab>
+    </mat-tab-group>
+
+</div>

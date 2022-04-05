@@ -1,0 +1,68 @@
+<app-header [title]=title></app-header>
+<app-popup [popup]=popup [msg]=msg #Popup></app-popup>
+
+<header>
+    <div id="img_header" class="img_header"> </div>
+</header>
+
+<div id="parrainage" class="container largeur-max">
+    <div class="bloc" *ngIf="!parrain">
+        <div class="col" id="col1">
+            <h1>Cumulez vos récompenses et recevez jusqu’à 500€ en parrainant vos proches !</h1>
+            <p>Faites un geste pour la planète en recevant des récompenses avec la LNDL. Obtenez votre code de parrainage personnel et transmettez-le à vos proches. A chaque utilisation de ce code de parrainage, vous recevrez par mail, sous quelques jours,
+                l’avancement de vos récompenses.</p>
+            <h2>Parrainer c’est gagner !</h2>
+
+        </div>
+
+        <div class="col" id="col3">
+
+            <h2>Je souhaite parrainer et bénéficier de récompenses </h2>
+            <p>Je suis déjà client chez la LNDL ?</p>
+            <mat-radio-group class="radio-group" [(ngModel)]="quest">
+                <mat-radio-button value="oui">
+                    <span>Oui</span>
+                </mat-radio-button>
+                <mat-radio-button value="non">
+                    <span>Non</span>
+                </mat-radio-button>
+            </mat-radio-group>
+            <form [formGroup]="ClientFormGroup" *ngIf="!parrain">
+                <fieldset formGroupName="client" *ngIf="quest == 'oui' ">
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Code Client</mat-label>
+                            <input matInput type="text" formControlName="codeclient" name="codeclient" id="codeclient" placeholder="">
+                        </mat-form-field>
+
+                        <button mat-button (click)="LoginClient()">Valider</button>
+                        <br/><a (click)="CodePerdu()">Code Client perdu ?</a><br/>
+                    </div>
+                </fieldset>
+            </form>
+
+            <app-form *ngIf="quest == 'non'"></app-form>
+
+
+        </div>
+
+        <div class="col" id="col3">
+            <form [formGroup]="ParrainFormGroup">
+                <h2>J'ai parrainé, je souhaite bénéficier de mes avantages </h2>
+                <fieldset formGroupName="parrain">
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Code Parrain</mat-label>
+                            <input matInput type="text" formControlName="codeParrain" name="codeParrain" id="codeParrain" placeholder="">
+                        </mat-form-field>
+                        <button mat-button>Valider</button>
+                        <br/><a (click)="CodePerdu()">Code Parrain perdu ?</a><br/>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+
+    <app-client *ngIf="parrain" [parrain]="parrain" [client]="client"></app-client>
+</div>

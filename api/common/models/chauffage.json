@@ -1,0 +1,28 @@
+{
+  "name": "chauffage",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type_chauffe": {
+      "type": "string",
+      "required": true
+    },
+    "mode_chauffe": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "logement_join": {
+      "type": "hasOne",
+      "model": "logement",
+      "foreignKey": "id_chauffe"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

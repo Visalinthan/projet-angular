@@ -1,0 +1,125 @@
+/* Fin de page - Fin de page  --- Fin de page - Fin de page */
+
+/* Fin de page - Fin de page ---  Fin de page - Fin de page */
+
+footer {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+  background: #ddd;
+  bottom: 0px;
+}
+
+.lndl_footer {
+  width: 100%;
+  display: inline-block;
+}
+
+.lndl_footer div {
+  padding-top: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  width: 33.3%;
+}
+
+.lndl_footer div img {
+  width: 35px;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+.lndl_footer div:first-child img {
+  width: 25px;
+}
+
+.lndl_footer div p {
+  display: inline-block;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-align: center;
+  color: #444;
+  max-width: 250px;
+}
+
+.rs_footer {
+  border-top: 1px solid #444;
+  //height: 50px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.rs_footer div {
+  display: inline-block;
+  text-align: right;
+}
+
+.rs_footer div:first-child {
+  width: 55%;
+}
+
+.rs_footer div:nth-child(2) {
+  width: 45%;
+}
+
+.rs_footer div img {
+  width: 30px;
+  padding: 5px;
+}
+
+footer small {
+  color: #444;
+}
+
+@media only screen and (max-width: 980px) {
+  .lndl_footer div {
+    text-align: center;
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  .lndl_footer div .img-lieu {
+    display: none;
+  }
+
+  .lndl_footer div:first-child img {
+    width: 35px;
+  }
+  .lndl_footer div img {
+    text-align: center;
+    margin: 0 auto;
+    width: 35px;
+    display: block;
+    padding: 5px;
+  }
+
+  .lndl_footer div p {
+    display: block;
+    margin: 0 auto;
+    font-size: 0.9em;
+    font-weight: 400;
+    text-align: center;
+    color: #444;
+    max-width: 250px;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .lndl_footer div:first-child,
+  .lndl_footer div:nth-child(2) {
+    width: 50%;
+  }
+  .lndl_footer div:nth-child(3) {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .lndl_footer div:first-child,
+  .lndl_footer div:nth-child(2),
+  .lndl_footer div:nth-child(3) {
+    width: 100%;
+  }
+}

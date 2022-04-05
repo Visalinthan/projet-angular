@@ -1,0 +1,29 @@
+<div class="overlay" *ngIf="popup == true">
+    <div class="popup">
+        <a class="close" (click)="closePopeUp()">&times;</a>
+        <div class="content" *ngIf="msg == 'home' ">
+            <h2>GRATUIT ET IMMÉDIAT !</h2>
+            <p>Vérifiez votre éligibilité en 3 minutes seulement et recevez par mail votre devis gratuit.<br/> Economisez jusqu'à 80% sur vos factures d'énergies, c'est maintenant !</p>
+            <button [routerLink]="['/test']">Je me lance !</button>
+        </div>
+        <div class="content" *ngIf="msg == 'test' ">
+            <h2>Demande envoyé !</h2>
+            <p>Un conseiller vous contactera dans un délai de 24h</p>
+            <button (click)="closePopeUp()">Fermer</button>
+        </div>
+        <div class="content" *ngIf="msg == 'newParrain' ">
+            <h2>Bienvenue !</h2>
+            <p>Pour finalisez le parrainnage cliquez sur le lien envoyé dans votre boite mail</p>
+            <button class='btnClose' (click)="closePopeUp()">Fermer</button>
+        </div>
+        <div class="content" *ngIf="msg == 'codeperdu' ">
+            <h2>Code Perdu ?</h2>
+            <button class='btnClose' (click)="closePopeUp()">Fermer</button>
+        </div>
+        <div class="content" *ngIf="msg == 'sav' ">
+            <h2>Message envoyé !</h2>
+            <p>Un conseiller vous contactera dans un délai de 24h</p>
+            <button (click)="closePopeUp()">Fermer</button>
+        </div>
+    </div>
+</div>

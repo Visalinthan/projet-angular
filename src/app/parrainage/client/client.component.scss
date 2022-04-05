@@ -1,0 +1,47 @@
+.parrain mat-form-field {
+    width: 50%;
+    padding: 5px 10px;
+}
+
+.col p {
+    font-size: 1.2em;
+    padding: 10px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.btnValid {
+    width: 150px;
+    margin: 5px 10px;
+    padding: 5px 30px;
+    border: 1px solid #444;
+}
+
+.btnValid :hover {
+    background-color: #086a39;
+    color: #fff;
+}
+
+span.btn-close {
+    cursor: pointer;
+}
+
+a {
+    font-size: 1em;
+    padding: 10px 0px;
+}
+
+
+/*
+.btnAdd {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}*/
